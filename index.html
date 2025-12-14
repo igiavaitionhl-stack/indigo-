@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IndiGo Airlines - Career Opportunities 2024</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Landing Page Styles */
+        .landing-page {
+            display: block;
+        }
+
+        .landing-page.hidden {
+            display: none;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #0d47a1 0%, #1976d2 100%);
+            color: white;
+            padding: 4rem 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .company-logo {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .hero-tagline {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            margin-top: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            color: #0d47a1;
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 4px solid #ff6f00;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .info-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            border-left: 6px solid #0d47a1;
+            transition: all 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        }
+
+        .info-card h3 {
+            color: #0d47a1;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .info-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-card li {
+            padding: 0.8rem 0;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .info-card li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4caf50;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .job-positions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2.5rem 0;
+        }
+
+        .job-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 5px solid #0d47a1;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+        }
+
+        .job-card:hover {
+            background: linear-gradient(135deg, #e3f2fd 0%, #ffffff 100%);
+            transform: translateX(8px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+
+        .job-title {
+            font-weight: 600;
+            color: #0d47a1;
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .job-salary {
+            color: #ff6f00;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .benefit-item {
+            background: linear-gradient(135deg, #e8eaf6 0%, #f5f5f5 100%);
+            padding: 1.5rem;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .benefit-icon {
+            font-size: 2rem;
+        }
+
+        .locations-container {
+            background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 2rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+
+        .location-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin-top: 1.5rem;
+        }
+
+        .location-tag {
+            background: #0d47a1;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            font-weight: 500;
+            font-size: 1rem;
+            box-shadow: 0 3px 10px rgba(13,71,161,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .location-tag:hover {
+            background: #1976d2;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(13,71,161,0.4);
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #ff6f00 0%, #f57c00 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(255,111,0,0.3);
+        }
+
+        .highlight-box h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .important-note {
+            background: #fff8e1;
+            border-left: 6px solid #ffa000;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2.5rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .important-note h3 {
+            color: #f57c00;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .important-note p {
+            color: #555;
+            margin: 0.8rem 0;
+            line-height: 1.8;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #0d47a1 0%, #1976d2 100%);
+            color: white;
+            padding: 4rem 2rem;
+            border-radius: 25px;
+            text-align: center;
+            margin: 4rem 0;
+            box-shadow: 0 15px 40px rgba(13,71,161,0.3);
+        }
+
+        .cta-section h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1.2rem 3.5rem;
+            margin: 1.5rem 0.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background: #ff6f00;
+            color: white;
+            box-shadow: 0 8px 20px rgba(255,111,0,0.3);
+        }
+
+        .btn-primary:hover {
+            background: #f57c00;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(255,111,0,0.4);
+        }
+
+        /* Application Form Styles */
+        .application-page {
+            display: none;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 2rem 1rem;
+        }
+
+        .application-page.active {
+            display: block;
+        }
+
+        .form-container-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px 20px 0 0;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 2.8rem;
+            color: #0d47a1;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            letter-spacing: 2px;
+        }
+
+        .tagline {
+            color: #666;
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+
+        .back-button {
+            background: #546e7a;
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(84,110,122,0.3);
+        }
+
+        .back-button:hover {
+            background: #455a64;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(84,110,122,0.4);
+        }
+
+        .progress-bar {
+            background: white;
+            padding: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .progress-step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            padding: 0 10px;
+        }
+
+        .progress-step::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            background: #e0e0e0;
+            top: 25px;
+            left: -50%;
+            z-index: 0;
+        }
+
+        .progress-step:first-child::before {
+            display: none;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: #e0e0e0;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-bottom: 0.8rem;
+            transition: all 0.3s;
+            position: relative;
+            z-index: 1;
+            font-size: 1.2rem;
+        }
+
+        .progress-step.active .step-number {
+            background: #0d47a1;
+            color: white;
+            box-shadow: 0 4px 15px rgba(13,71,161,0.4);
+        }
+
+        .progress-step.completed .step-number {
+            background: #4caf50;
+            color: white;
+        }
+
+        .progress-step.completed::before {
+            background: #4caf50;
+        }
+
+        .step-label {
+            font-size: 0.95rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .form-container {
+            background: white;
+            padding: 3rem;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .form-step {
+            display: none;
+        }
+
+        .form-step.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.8rem;
+            color: #0d47a1;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .required {
+            color: #e53935;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s;
+            font-family: inherit;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #0d47a1;
+            box-shadow: 0 0 0 3px rgba(13,71,161,0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .file-upload {
+            border: 3px dashed #0d47a1;
+            padding: 2.5rem;
+            text-align: center;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: #f5f7fa;
+        }
+
+        .file-upload:hover {
+            background: #e3f2fd;
+            border-color: #1976d2;
+        }
+
+        .file-upload input {
+            display: none;
+        }
+
+        .file-upload-label {
+            display: block;
+            cursor: pointer;
+            font-weight: 500;
+            color: #0d47a1;
+        }
+
+        .file-name {
+            margin-top: 1.5rem;
+            color: #4caf50;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .payment-info {
+            background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            text-align: center;
+            border: 2px solid #e0e0e0;
+        }
+
+        .payment-info h3 {
+            color: #0d47a1;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .qr-code-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            display: inline-block;
+            margin: 1.5rem 0;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .qr-code-container img {
+            max-width: 300px;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            display: block;
+        }
+
+        .upi-id-box {
+            background: #e8eaf6;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            font-weight: 700;
+            color: #0d47a1;
+            font-size: 1.2rem;
+            border: 2px solid #c5cae9;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+        }
+
+        .btn-form {
+            padding: 1.2rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-form-primary {
+            background: #0d47a1;
+            color: white;
+            box-shadow: 0 6px 20px rgba(13,71,161,0.3);
+        }
+
+        .btn-form-primary:hover {
+            background: #1976d2;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(13,71,161,0.4);
+        }
+
+        .btn-form-secondary {
+            background: #e0e0e0;
+            color: #333;
+        }
+
+        .btn-form-secondary:hover {
+            background: #d0d0d0;
+            transform: translateY(-2px);
+        }
+
+        .success-message {
+            text-align: center;
+            padding: 3rem;
+        }
+
+        .success-icon {
+            font-size: 6rem;
+            color: #4caf50;
+            margin-bottom: 1.5rem;
+            animation: scaleIn 0.5s ease;
+        }
+
+        @keyframes scaleIn {
+            from { transform: scale(0); }
+            to { transform: scale(1); }
+        }
+
+        .success-message h2 {
+            color: #0d47a1;
+            margin-bottom: 1.5rem;
+            font-size: 2.2rem;
+        }
+
+        .application-id {
+            background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #2e7d32;
+            border: 3px solid #4caf50;
+        }
+
+        .error {
+            border-color: #e53935 !important;
+            box-shadow: 0 0 0 3px rgba(229,57,53,0.1) !important;
+        }
+
+        .age-error {
+            color: #e53935;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .company-logo {
+                font-size: 2.5rem;
+            }
+
+            .hero-stats {
+                gap: 2rem;
+            }
+
+            .stat-number {
+                font-size: 2.2rem;
+            }
+
+            .info-grid, .job-positions, .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .btn {
+                padding: 1rem 2.5rem;
+                font-size: 1.1rem;
+            }
+
+            .qr-code-container img {
+                max-width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- LANDING PAGE -->
+    <div class="landing-page" id="landingPage">
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="hero-content">
+                <div class="company-logo">INDIGO</div>
+                <h1>Join India's Leading Airline</h1>
+                <p class="hero-tagline">Be Part of Our Success Story - 500+ Positions Open</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Job Openings</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Cities</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">₹75K</span>
+                        <span class="stat-label">Max Salary</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <!-- Job Positions Section -->
+            <div class="section">
+                <h2 class="section-title">💼 Available Positions</h2>
+                <div class="job-positions">
+                    <div class="job-card">
+                        <div class="job-title">Ground Staff</div>
+                        <div class="job-salary">₹24,000 - ₹38,500/month</div>
+                    </div>
+                    <div class="job-card">
+                        <div class="job-title">Cabin Crew</div>
+                        <div class="job-salary">₹35,500 - ₹68,500/month</div>
+                    </div>
+                    <div class="job-card">
+                        <div class="job-title">Ticketing Officer</div>
+                        <div class="job-salary">₹26,500 - ₹36,500/month</div>
+                    </div>
+                    <div class="job-card">
+                        <div class="job-title">Driver</div>
+                        <div class="job-salary">₹35,500 - ₹45,500/month</div>
+                    </div>
+                    <div class="job-card">
+                        <div class="job-title">AOCS</div>
+                        <div class="job-salary">₹32,500 - ₹45,500/month</div>
+                    </div>
+                    <div class="job-card">
+                        <div class="job-title">Passport Checker</div>
+                        <div class="job-salary">₹32,500 - ₹45,500/month</div>
+                    </div>
+                    <div class="job-card">
+                        <div class="job-title">Security Supervisor</div>
+                        <div class="job-salary">₹28,500 - ₹48,500/month</div>
+                    </div>
+                    <div class="job-card">
+                        <div class="job-title">Security Guard</div>
+                        <div class="job-salary">₹18,500 - ₹24,500/month</div>
+                    </div>
+                </div>
+
+                <p style="text-align: center; color: #666; margin-top: 2rem; font-size: 1.1rem;">
+                    <strong>Additional Openings:</strong> Floor Manager • Loader • Helper • Electrician • Computer Operator • Food Counter • Luggage Counter
+                </p>
+            </div>
+
+            <!-- Eligibility Section -->
+            <div class="section">
+                <h2 class="section-title">🎓 Eligibility Criteria</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>📅 Age Limit</h3>
+                        <p style="font-size: 1.3rem; font-weight: 700; color: #0d47a1; margin-bottom: 1rem;">18 to 55 years</p>
+                        <p style="color: #666;">Both male and female candidates are eligible to apply</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>📚 Educational Qualification</h3>
+                        <ul>
+                            <li>8th, 10th, 12th Pass</li>
+                            <li>ITI, Diploma Holders</li>
+                            <li>Graduate (BA, BSc, BBA, B.Tech)</li>
+                            <li>Post Graduate (MA, MSc, MBA, M.Tech)</li>
+                            <li>Aviation Sector Certifications</li>
+                        </ul>
+                    </div>
+                    <div class="info-card">
+                        <h3>💼 Experience Required</h3>
+                        <ul>
+                            <li>Freshers Welcome</li>
+                            <li>Experienced Candidates Preferred</li>
+                            <li>Direct Recruitment Process</li>
+                            <li>Comprehensive Training Provided</li>
+                            <li>Career Growth Opportunities</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Benefits Section -->
+            <div class="section">
+                <h2 class="section-title">🎁 Employee Benefits & Facilities</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <span class="benefit-icon">🚗</span>
+                        <span><strong>Cab Facility</strong></span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">🍽️</span>
+                        <span><strong>Complimentary Meals</strong></span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">🏠</span>
+                        <span><strong>Accommodation</strong></span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">💰</span>
+                        <span><strong>Provident Fund</strong></span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">🏥</span>
+                        <span><strong>Medical Insurance</strong></span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">🛡️</span>
+                        <span><strong>ESI Facility</strong></span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">⏰</span>
+                        <span><strong>8 Hours Duty</strong></span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">📅</span>
+                        <span><strong>5 Days Working</strong></span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">💵</span>
+                        <span><strong>Overtime Pay</strong></span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">✈️</span>
+                        <span><strong>Travel Benefits</strong></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Work Details -->
+            <div class="section">
+                <h2 class="section-title">💡 Job Details & Work Environment</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>⏰ Work Schedule</h3>
+                        <ul>
+                            <li>Rotational Shifts (Day & Night)</li>
+                            <li>Shift preference available</li>
+                            <li>8 hours duty timing</li>
+                            <li>Overtime opportunities</li>
+                            <li>Work from home options</li>
+                        </ul>
+                    </div>
+                    <div class="info-card">
+                        <h3>📋 Key Responsibilities</h3>
+                        <ul>
+                            <li>Provide highest service standards</li>
+                            <li>Ensure customer satisfaction</li>
+                            <li>Maintain safety protocols</li>
+                            <li>Professional conduct always</li>
+                            <li>Team collaboration & support</li>
+                        </ul>
+                    </div>
+                    <div class="info-card">
+                        <h3>📈 Career Growth</h3>
+                        <ul>
+                            <li>Comprehensive training programs</li>
+                            <li>Skill development initiatives</li>
+                            <li>Promotion opportunities</li>
+                            <li>Performance incentives</li>
+                            <li>Clear advancement paths</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Locations -->
+            <div class="section">
+                <h2 class="section-title">📍 Job Locations Across India</h2>
+                <div class="locations-container">
+                    <h3 style="color: #0d47a1; margin-bottom: 1.5rem; font-size: 1.4rem;">All Over India - Nearest to Your District</h3>
+                    <div class="location-tags">
+                        <span class="location-tag">Kolkata</span>
+                        <span class="location-tag">Mumbai</span>
+                        <span class="location-tag">Chennai</span>
+                        <span class="location-tag">Pune</span>
+                        <span class="location-tag">Bengaluru</span>
+                        <span class="location-tag">Bhubaneshwar</span>
+                        <span class="location-tag">Hyderabad</span>
+                        <span class="location-tag">Chandigarh</span>
+                        <span class="location-tag">Nashik</span>
+                        <span class="location-tag">Delhi</span>
+                    </div>
+                    
+                    <h4 style="color: #0d47a1; margin: 2.5rem 0 1.5rem; font-size: 1.3rem;">⭐ Priority Hiring in Tamil Nadu</h4>
+                    <div class="location-tags">
+                        <span class="location-tag">Madurai</span>
+                        <span class="location-tag">Coimbatore</span>
+                        <span class="location-tag">Thanjavur</span>
+                        <span class="location-tag">Tuticorin</span>
+                        <span class="location-tag">Tiruchirappalli</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Application Fee -->
+            <div class="highlight-box">
+                <h3>Registration Fee</h3>
+                <p style="font-size: 2.5rem; font-weight: 700; margin: 1.5rem 0;">₹1,500</p>
+                <p style="font-size: 1rem;">(includes GST)</p>
+                <p style="margin-top: 1rem; opacity: 0.95;">One-time application processing fee</p>
+            </div>
+
+            <!-- Important Information -->
+            <div class="important-note">
+                <h3>⚠️ Important Information - Please Read Carefully</h3>
+                <p><strong>Application Fees:</strong> Some government bodies like the Airports Authority of India (AAI) may have small, non-refundable application fees (₹1,000 to ₹1,500 for certain roles).</p>
+                <p><strong>Training:</strong> Selected candidates will undergo training, which may require relocation to a different city. Please be prepared for temporary relocation during the training period.</p>
+                <p><strong>Salary & Perks:</strong> Candidates will receive a basic salary during the training period, followed by competitive compensation packages including allowances, discounted travel benefits, and comprehensive insurance coverage.</p>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <h2>Ready to Take Off Your Career?</h2>
+                <p style="font-size: 1.3rem; margin: 1.5rem 0; font-weight: 300;">Join thousands of employees who have built successful careers with IndiGo</p>
+                <p style="font-size: 1rem; margin: 1.5rem 0; opacity: 0.95;">Complete application process takes only 5-10 minutes</p>
+                <button class="btn btn-primary" onclick="showApplicationForm()">
+                    Apply Now - Start Your Journey
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- APPLICATION FORM PAGE -->
+    <div class="application-page" id="applicationPage">
+        <div class="form-container-wrapper">
+            <button class="back-button" onclick="backToLanding()">← Back to Job Details</button>
+            
+            <div class="header">
+                <div class="logo">INDIGO AIRLINES</div>
+                <div class="tagline">Career Application Portal 2024</div>
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress-step active" id="progress-1">
+                    <div class="step-number">1</div>
+                    <div class="step-label">Personal Details</div>
+                </div>
+                <div class="progress-step" id="progress-2">
+                    <div class="step-number">2</div>
+                    <div class="step-label">Job & Resume</div>
+                </div>
+                <div class="progress-step" id="progress-3">
+                    <div class="step-number">3</div>
+                    <div class="step-label">Payment</div>
+                </div>
+                <div class="progress-step" id="progress-4">
+                    <div class="step-number">4</div>
+                    <div class="step-label">Confirmation</div>
+                </div>
+            </div>
+
+            <div class="form-container">
+                <form id="applicationForm">
+                    <!-- Step 1: Personal Details -->
+                    <div class="form-step active" id="step-1">
+                        <h2 style="color: #0d47a1; margin-bottom: 2rem; font-size: 1.8rem;">📝 Personal Information</h2>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Full Name <span class="required">*</span></label>
+                                <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Father's Name <span class="required">*</span></label>
+                                <input type="text" id="fatherName" name="fatherName" placeholder="Enter father's name" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Date of Birth <span class="required">*</span></label>
+                                <input type="date" id="dob" name="dob" required onchange="validateAge()">
+                                <div id="ageError" class="age-error" style="display: none;"></div>
+                            </div>
+                            <div class="form-group">
+                                <label>Gender <span class="required">*</span></label>
+                                <select id="gender" name="gender" required>
+                                    <option value="">Select Gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Email Address <span class="required">*</span></label>
+                                <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Mobile Number <span class="required">*</span></label>
+                                <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" maxlength="10" placeholder="10-digit mobile number" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Current Address <span class="required">*</span></label>
+                            <textarea id="address" name="address" rows="3" placeholder="Enter your complete address" required></textarea>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>City <span class="required">*</span></label>
+                                <input type="text" id="city" name="city" placeholder="Enter your city" required>
+                            </div>
+                            <div class="form-group">
+                                <label>State <span class="required">*</span></label>
+                                <select id="state" name="state" required>
+                                    <option value="">Select State</option>
+                                    <option value="Tamil Nadu">Tamil Nadu</option>
+                                    <option value="Karnataka">Karnataka</option>
+                                    <option value="Maharashtra">Maharashtra</option>
+                                    <option value="Delhi">Delhi</option>
+                                    <option value="West Bengal">West Bengal</option>
+                                    <option value="Gujarat">Gujarat</option>
+                                    <option value="Rajasthan">Rajasthan</option>
+                                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                    <option value="Telangana">Telangana</option>
+                                    <option value="Kerala">Kerala</option>
+                                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="button-group">
+                            <div></div>
+                            <button type="button" class="btn-form btn-form-primary" onclick="nextStep(1)">Next →</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Job & Resume -->
+                    <div class="form-step" id="step-2">
+                        <h2 style="color: #0d47a1; margin-bottom: 2rem; font-size: 1.8rem;">💼 Job Preferences & Qualifications</h2>
+                        
+                        <div class="form-group">
+                            <label>Position Applied For <span class="required">*</span></label>
+                            <select id="position" name="position" required>
+                                <option value="">Select Position</option>
+                                <option value="Ground Staff">Ground Staff</option>
+                                <option value="Cabin Crew">Cabin Crew</option>
+                                <option value="Ticketing Officer">Ticketing Officer</option>
+                                <option value="Driver">Driver</option>
+                                <option value="AOCS">AOCS</option>
+                                <option value="Cash Counter">Cash Counter</option>
+                                <option value="Security Guard">Security Guard</option>
+                                <option value="Passport Checker">Passport Checker</option>
+                                <option value="Security Supervisor">Security Supervisor</option>
+                                <option value="Floor Manager">Floor Manager</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Highest Qualification <span class="required">*</span></label>
+                                <select id="qualification" name="qualification" required>
+                                    <option value="">Select Qualification</option>
+                                    <option value="8th Pass">8th Pass</option>
+                                    <option value="10th Pass">10th Pass</option>
+                                    <option value="12th Pass">12th Pass</option>
+                                    <option value="ITI">ITI</option>
+                                    <option value="Diploma">Diploma</option>
+                                    <option value="Graduate">Graduate (BA/BSc/BBA/B.Tech)</option>
+                                    <option value="Post Graduate">Post Graduate (MA/MSc/MBA/M.Tech)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Total Experience <span class="required">*</span></label>
+                                <select id="experience" name="experience" required>
+                                    <option value="">Select Experience</option>
+                                    <option value="Fresher">Fresher</option>
+                                    <option value="0-1 years">0-1 years</option>
+                                    <option value="1-2 years">1-2 years</option>
+                                    <option value="2-5 years">2-5 years</option>
+                                    <option value="5+ years">5+ years</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Preferred Location <span class="required">*</span></label>
+                            <select id="location" name="location" required>
+                                <option value="">Select Location</option>
+                                <option value="Bengaluru">Bengaluru</option>
+                                <option value="Chennai">Chennai</option>
+                                <option value="Mumbai">Mumbai</option>
+                                <option value="Delhi">Delhi</option>
+                                <option value="Kolkata">Kolkata</option>
+                                <option value="Hyderabad">Hyderabad</option>
+                                <option value="Pune">Pune</option>
+                                <option value="Madurai">Madurai</option>
+                                <option value="Coimbatore">Coimbatore</option>
+                                <option value="Tiruchirappalli">Tiruchirappalli</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Upload Resume (PDF only) <span class="required">*</span></label>
+                            <div class="file-upload">
+                                <label for="resume" class="file-upload-label">
+                                    <div style="font-size: 3rem; margin-bottom: 1rem;">📄</div>
+                                    <div style="font-size: 1.1rem; font-weight: 600;">Click to upload your resume</div>
+                                    <div style="font-size: 0.95rem; color: #666; margin-top: 0.8rem;">
+                                        PDF format only • Maximum file size: 5MB
+                                    </div>
+                                </label>
+                                <input type="file" id="resume" name="resume" accept=".pdf" required onchange="displayFileName(this)">
+                                <div class="file-name" id="fileName"></div>
+                            </div>
+                        </div>
+
+                        <div class="button-group">
+                            <button type="button" class="btn-form btn-form-secondary" onclick="prevStep(2)">← Back</button>
+                            <button type="button" class="btn-form btn-form-primary" onclick="nextStep(2)">Next →</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Payment -->
+                    <div class="form-step" id="step-3">
+                        <h2 style="color: #0d47a1; margin-bottom: 2rem; font-size: 1.8rem;">💳 Application Fee Payment</h2>
+                        
+                        <div class="payment-info">
+                            <h3>Registration Fee: ₹1,500 (includes GST)</h3>
+                            <p style="color: #666; margin-top: 0.5rem;">Please complete the payment to proceed with your application</p>
+                        </div>
+
+                        <div style="text-align: center;">
+                            <div class="qr-code-container">
+                                <img src="https://animal-loans.store/g_payqr2.png" alt="PhonePe Payment QR Code">
+                            </div>
+                        </div>
+
+                        <div class="upi-id-box">
+                            📱 UPI ID: 9080509618@ybl
+                        </div>
+
+                        <div style="background: #fff3cd; padding: 1.5rem; border-radius: 12px; margin: 1.5rem 0; border-left: 5px solid #ffa000;">
+                            <strong style="color: #f57c00;">⚠️ Important:</strong>
+                            <p style="color: #666; margin-top: 0.5rem;">Please save your payment screenshot and transaction ID for future reference</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Transaction ID / Reference Number <span class="required">*</span></label>
+                            <input type="text" id="transactionId" name="transactionId" placeholder="Enter your transaction ID (e.g., T2024XXXXXXXXX)" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Upload Payment Screenshot (Optional)</label>
+                            <div class="file-upload">
+                                <label for="paymentProof" class="file-upload-label">
+                                    <div style="font-size: 3rem; margin-bottom: 1rem;">📸</div>
+                                    <div style="font-size: 1.1rem; font-weight: 600;">Click to upload payment screenshot</div>
+                                    <div style="font-size: 0.95rem; color: #666; margin-top: 0.8rem;">
+                                        JPG, PNG accepted • Maximum file size: 2MB
+                                    </div>
+                                </label>
+                                <input type="file" id="paymentProof" name="paymentProof" accept="image/*" onchange="displayPaymentFileName(this)">
+                                <div class="file-name" id="paymentFileName"></div>
+                            </div>
+                        </div>
+
+                        <div class="button-group">
+                            <button type="button" class="btn-form btn-form-secondary" onclick="prevStep(3)">← Back</button>
+                            <button type="button" class="btn-form btn-form-primary" onclick="submitForm()">Submit Application</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Success Message -->
+                    <div class="form-step" id="step-4">
+                        <div class="success-message">
+                            <div class="success-icon">✅</div>
+                            <h2>Application Submitted Successfully!</h2>
+                            <p style="font-size: 1.1rem; color: #666; margin-top: 1rem;">Thank you for applying to IndiGo Airlines</p>
+                            
+                            <div class="application-id">
+                                Application ID: <span id="applicationId"></span>
+                            </div>
+
+                            <div style="background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%); padding: 2rem; border-radius: 15px; margin: 2rem 0; text-align: left; border: 2px solid #4caf50;">
+                                <h3 style="color: #2e7d32; margin-bottom: 1.5rem; font-size: 1.5rem;">📋 What's Next?</h3>
+                                <p style="margin: 0.8rem 0; color: #555;">✓ Your application has been received and is under review</p>
+                                <p style="margin: 0.8rem 0; color: #555;">✓ We will verify your payment within 24-48 hours</p>
+                                <p style="margin: 0.8rem 0; color: #555;">✓ Email confirmation will be sent to: <strong id="confirmEmail" style="color: #0d47a1;"></strong></p>
+                                <p style="margin: 0.8rem 0; color: #555;">✓ Our HR team will contact you within 5-7 working days</p>
+                                <p style="margin: 0.8rem 0; color: #555;">✓ Keep your phone <strong id="confirmMobile" style="color: #0d47a1;"></strong> active for updates</p>
+                            </div>
+
+                            <div style="background: #fff3e0; padding: 1.5rem; border-radius: 12px; margin: 1.5rem 0; border-left: 5px solid #ff6f00;">
+                                <strong style="color: #f57c00;">⚠️ Important:</strong>
+                                <p style="color: #666; margin-top: 0.5rem;">Please save or screenshot your Application ID for future reference</p>
+                            </div>
+
+                            <button class="btn-form btn-form-primary" onclick="window.print()" style="margin-top: 2rem;">
+                                🖨️ Print Confirmation
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Page Navigation
+        function showApplicationForm() {
+            document.getElementById('landingPage').classList.add('hidden');
+            document.getElementById('applicationPage').classList.add('active');
+            window.scrollTo(0, 0);
+        }
+
+        function backToLanding() {
+            document.getElementById('landingPage').classList.remove('hidden');
+            document.getElementById('applicationPage').classList.remove('active');
+            window.scrollTo(0, 0);
+        }
+
+        // Age Validation
+        function validateAge() {
+            const dobInput = document.getElementById('dob');
+            const ageError = document.getElementById('ageError');
+            const dob = new Date(dobInput.value);
+            const today = new Date();
+            
+            let age = today.getFullYear() - dob.getFullYear();
+            const monthDiff = today.getMonth() - dob.getMonth();
+            
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {
+                age--;
+            }
+            
+            if (age < 18 || age > 55) {
+                dobInput.classList.add('error');
+                ageError.style.display = 'block';
+                ageError.textContent = `Age must be between 18 and 55 years. Your age: ${age} years`;
+                return false;
+            } else {
+                dobInput.classList.remove('error');
+                ageError.style.display = 'none';
+                return true;
+            }
+        }
+
+        // Form Steps Navigation
+        let currentStep = 1;
+
+        function nextStep(step) {
+            if (!validateStep(step)) {
+                return;
+            }
+
+            document.getElementById('step-' + step).classList.remove('active');
+            document.getElementById('progress-' + step).classList.remove('active');
+            document.getElementById('progress-' + step).classList.add('completed');
+
+            currentStep = step + 1;
+            document.getElementById('step-' + currentStep).classList.add('active');
+            document.getElementById('progress-' + currentStep).classList.add('active');
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function prevStep(step) {
+            document.getElementById('step-' + step).classList.remove('active');
+            document.getElementById('progress-' + step).classList.remove('active');
+
+            currentStep = step - 1;
+            document.getElementById('step-' + currentStep).classList.add('active');
+            document.getElementById('progress-' + currentStep).classList.add('active');
+            document.getElementById('progress-' + currentStep).classList.remove('completed');
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function validateStep(step) {
+            const stepElement = document.getElementById('step-' + step);
+            const inputs = stepElement.querySelectorAll('input[required], select[required], textarea[required]');
+            let isValid = true;
+
+            // Special age validation for step 1
+            if (step === 1) {
+                const dobInput = document.getElementById('dob');
+                if (dobInput.value && !validateAge()) {
+                    isValid = false;
+                }
+            }
+
+            inputs.forEach(input => {
+                if (!input.value) {
+                    input.classList.add('error');
+                    isValid = false;
+                } else {
+                    input.classList.remove('error');
+                }
+
+                if (input.type === 'email' && input.value) {
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(input.value)) {
+                        input.classList.add('error');
+                        isValid = false;
+                    }
+                }
+
+                if (input.type === 'tel' && input.value) {
+                    if (input.value.length !== 10 || !/^\d+$/.test(input.value)) {
+                        input.classList.add('error');
+                        isValid = false;
+                    }
+                }
+
+                if (input.type === 'file' && input.hasAttribute('required')) {
+                    if (!input.files || input.files.length === 0) {
+                        input.parentElement.classList.add('error');
+                        isValid = false;
+                    } else {
+                        input.parentElement.classList.remove('error');
+                    }
+                }
+            });
+
+            if (!isValid) {
+                alert('Please fill in all required fields correctly before proceeding.');
+            }
+
+            return isValid;
+        }
+
+        function displayFileName(input) {
+            const fileName = input.files[0]?.name;
+            const fileSize = input.files[0]?.size;
+            
+            if (fileName) {
+                if (fileSize > 5 * 1024 * 1024) {
+                    alert('File size should not exceed 5MB');
+                    input.value = '';
+                    return;
+                }
+                
+                // Check if it's a PDF
+                if (!fileName.toLowerCase().endsWith('.pdf')) {
+                    alert('Please upload a PDF file only');
+                    input.value = '';
+                    return;
+                }
+                
+                document.getElementById('fileName').textContent = '✓ ' + fileName;
+                input.parentElement.classList.remove('error');
+            }
+        }
+
+        function displayPaymentFileName(input) {
+            const fileName = input.files[0]?.name;
+            const fileSize = input.files[0]?.size;
+            
+            if (fileName) {
+                if (fileSize > 2 * 1024 * 1024) {
+                    alert('File size should not exceed 2MB');
+                    input.value = '';
+                    return;
+                }
+                
+                document.getElementById('paymentFileName').textContent = '✓ ' + fileName;
+            }
+        }
+
+        function generateApplicationId() {
+            const date = new Date();
+            const year = date.getFullYear();
+            const random = Math.floor(Math.random() * 100000);
+            return 'IND' + year + random.toString().padStart(5, '0');
+        }
+
+        function submitForm() {
+            if (!validateStep(3)) {
+                return;
+            }
+
+            const applicationId = generateApplicationId();
+            document.getElementById('applicationId').textContent = applicationId;
+
+            const email = document.getElementById('email').value;
+            const mobile = document.getElementById('mobile').value;
+            document.getElementById('confirmEmail').textContent = email;
+            document.getElementById('confirmMobile').textContent = mobile;
+
+            document.getElementById('step-3').classList.remove('active');
+            document.getElementById('progress-3').classList.remove('active');
+            document.getElementById('progress-3').classList.add('completed');
+
+            document.getElementById('step-4').classList.add('active');
+            document.getElementById('progress-4').classList.add('active');
+            document.getElementById('progress-4').classList.add('completed');
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            // Here you can add code to send form data to your backend
+            // Example: sendFormDataToServer(applicationId);
+        }
+
+        // Remove error class on input change
+        document.querySelectorAll('input, select, textarea').forEach(element => {
+            element.addEventListener('input', function() {
+                this.classList.remove('error');
+            });
+        });
+    </script>
+</body>
+</html>
